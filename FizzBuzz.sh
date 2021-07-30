@@ -1,18 +1,16 @@
 #! /usr/bin/bash
 n=1
-while [ $n lt 21 ]
+while (( $n <= 20 ))
 do
-if [[ $((n%3)) = 0 ] && [[ $((n%5)) = 0 ]
+if [ $(( n%3 )) -eq 0 ] && [ $(( n%5 )) -eq 0 ]
 then
-echo "$n FizzBuzz"
-elif [ $((n%3)) = 0 ]
+echo "$n- FizzBuzz"
+elif [ $(( n%3 )) -eq 0 ]
 then
-echo "$n Fizz"
-elif [ $((%5)) = 0 ]
+echo "$n- Fizz"
+elif [ $(( n%5 )) -eq 0 ]
 then
-echo "$n Buzz"
-else
-echo "$n Not Divisible"
+echo "$n- Buzz"
 fi
-n = $((n+1))
+(( n++ ))
 done
